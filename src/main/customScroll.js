@@ -366,11 +366,13 @@ class CustomScroll extends Component {
            style={rootStyle}>
         <div className={styles.outerContainer}
              style={this.getOuterContainerStyle()}
-             onMouseDown={this.onMouseDown}
-             onTouchStart={this.onTouchStart}
-             onClick={this.onClick}>
+             >
           {this.hasScroll ? (
-            <div className={styles.positioning}>
+            <div className={styles.positioning}
+              onMouseDown={this.onMouseDown}
+              onTouchStart={this.onTouchStart}
+              onClick={this.onClick}
+            >
               <div ref={this.setCustomScrollbarRef}
                    className={`${styles.customScrollbar} ${ this.props.rtl ? styles.customScrollbarRtl : ''}`}
                    key="scrollbar">
